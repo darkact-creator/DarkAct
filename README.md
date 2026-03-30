@@ -188,6 +188,8 @@ List of our volunteers:
 - Yuanjun Tan(谭元骏): yuanjuntan@whu.edu.cn
 - Minqi Song(宋敏齐)
 
+The GPUs of this work is mainly supported by Professor Zengzhao Chen and Dongbo Zhou(Dual RTX A800 and 8*RTX A40)
+
 ## 📧 Contact
 For questions about the dataset or code, please contact:
 - Yuanjun Tan: yuanjuntan@whu.edu.cn
