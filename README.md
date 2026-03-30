@@ -6,7 +6,13 @@
 
 Official implementation of **DarkAct** (CVPR 2026), a large-scale RGB-Thermal video dataset and a dedicated fusion framework for robust human action recognition under low-light conditions.
 
+Recently, we have expand our datasets to VQA which named as DarkAct++.
+
+![img](./readme_imgs/Fig1-final_1.png)
+_Overview of the DarkAct dataset. DarkAct captures diverse human actions under challenging low-light conditions across three dimensions: (1) Multi-Illumination: varying visibility levels ranging from weakly visible to almost invisible scenes; (2) Multi-View: actions observed from upward, eye-level, and downward viewpoints; and (3) Multi-Scene: recordings from a wide range of indoor and outdoor environments. Each RGB frame is paired with a precisely aligned thermal frame, providing strong cross-spectral complementarity for robust action recognition in dark environments._
+
 **Paper**: [CVPR2026_DarkAct_Yuanjun_main.pdf](CVPR2026_DarkAct_Yuanjun_main.pdf)
+
 **Dataset & Code**: This repository contains the full implementation of DarkAct-Net, dataset download links, and benchmarking scripts.
 
 ## 📌 Project Overview
