@@ -69,6 +69,9 @@ RGB/Thermal Videos → Patch Embedding → MAA Module (Motion Enhancement) → M
 
 ## 📈 Experimental Results
 ### Key Benchmark Results (Top-1 / Top-5 Accuracy)
+
+![img](./readme_imgs/main_bench.png)
+
 Evaluated on the DarkAct test set, DarkAct-Net outperforms all unimodal and multimodal SOTA methods:
 | Model Type | Best Performance | DarkAct-Net Performance |
 |------------|------------------|------------------------|
@@ -171,7 +174,11 @@ This work was supported by:
 - NSFC Regional Innovation and Development Joint Fund (Grant U25A20537)
 - National Key Research and Development Program of China (No. 2024YFC3015600)
 
-We thank the volunteers for participating in the data collection and the third-party team for data quality control.
+We thank the volunteers for participating in the data collection and the third-party team for data quality control. We promise that all video data will not be used for ethical-related tasks such as face recognition or biometric information retrieval, and the dataset is only applicable to academic research.
+List of our volunteers:
+- Zirui Wang(王子睿): wangzirui.0426@bytedance.com
+- Yanda Li()
+- 
 
 ## 📧 Contact
 For questions about the dataset or code, please contact:
