@@ -50,6 +50,8 @@ The full DarkAct dataset (RGB-T video pairs, train/test splits, annotations) is 
 ## 🚀 DarkAct-Net Architecture
 DarkAct-Net is a Transformer-based RGB-Thermal fusion framework built on **MViTv2** backbone, optimized for low-light HAR with two core modules:
 
+![img](./readme_imgs/pipeline-v2_1.png)
+
 ### 1. Motion-Aware Attention (MAA)
 - Extracts **human-centric motion-salient regions** by computing temporal frame differences and enhancing local contrast.
 - Suppresses noisy low-light backgrounds and mitigates RGB-T pixel misalignment with a **spatial-tolerant attention map**.
