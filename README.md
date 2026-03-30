@@ -177,8 +177,16 @@ This work was supported by:
 We thank the volunteers for participating in the data collection and the third-party team for data quality control. We promise that all video data will not be used for ethical-related tasks such as face recognition or biometric information retrieval, and the dataset is only applicable to academic research.
 List of our volunteers:
 - Zirui Wang(王子睿): wangzirui.0426@bytedance.com
-- Yanda Li()
-- 
+- Yanda Li(李彦达)
+- Zhaobo Guo(郭兆博)
+- Gaoyang Ji(姬高阳)
+- Zheng Wang(王政)
+- Liqian Deng(邓李茜)
+- Yue Bai(白悦)
+- Xu Pan(潘旭)
+- Guotao Chen(陈国涛)
+- Yuanjun Tan(谭元骏): yuanjuntan@whu.edu.cn
+- Minqi Song(宋敏齐)
 
 ## 📧 Contact
 For questions about the dataset or code, please contact:
