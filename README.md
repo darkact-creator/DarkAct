@@ -11,7 +11,7 @@ Recently, we have expand our datasets to VQA which named as DarkAct++.
 ![img](./readme_imgs/Fig1-final_1.png)
 _Overview of the DarkAct dataset. DarkAct captures diverse human actions under challenging low-light conditions across three dimensions: (1) Multi-Illumination: varying visibility levels ranging from weakly visible to almost invisible scenes; (2) Multi-View: actions observed from upward, eye-level, and downward viewpoints; and (3) Multi-Scene: recordings from a wide range of indoor and outdoor environments. Each RGB frame is paired with a precisely aligned thermal frame, providing strong cross-spectral complementarity for robust action recognition in dark environments._
 
-**Paper**: [CVPR2026_DarkAct_Yuanjun_main.pdf](CVPR2026_DarkAct_Yuanjun_main.pdf)
+**Paper**: [CVPR2026_DarkAct_Yuanjun_main.pdf](./papers/DarkAct.pdf)
 
 **Dataset & Code**: This repository contains the full implementation of DarkAct-Net, dataset download links, and benchmarking scripts.
 
@@ -52,6 +52,26 @@ DarkAct-Net is a Transformer-based RGB-Thermal fusion framework built on **MViTv
 
 ![img](./readme_imgs/pipeline-v2_1.png)
 
+### Multi-dimensional loss function design
+To achieve robust multimodal feature fusion and adaptive pixel-level image alignment under complex lighting conditions, the framework introduces multi-dimensional loss constraints:
+| Types of loss functions                | Core function                                                                 |
+|-----------------------------|--------------------------------------------------------------------------|
+| Sobel_fcc Loss | Constrain the consistency of edge structures between RGB-T modalities to improve pixel-level alignment accuracy |
+| Modality-specific Perception Loss | Retain the unique feature information of each modality and avoid the homogenization of modal features during the fusion process                 |
+| Modality Contrastive Loss | Enhance the discriminability of cross-modal features and improve the semantic representation ability of fused features                     |
+| LPIPS/MS-SSIM Loss | Constrain the consistency between the fused features and the real labels from the perceptual and structural levels to optimize the alignment effect.         |
+
+（1）Sobel_fcc Loss:
+$`\mathcal{L}_{\text{Sobel-fcc}} = 1 - \frac{1}{H \times W} \sum_{i=1}^H \sum_{j=1}^W\cos\left(\Omega\left(Y^r\right)_{i,j},\Omega\left(Y^t\right)_{i,j}\right)`$      
+
+（2）Modality-specific Perception Loss:$` \mathcal{L}_{\text{MSP}} = \left\| Y^r - \mathcal{P}_r(F_{\text{LAF}}) \right\|_2 + \left\| Y^t - \mathcal{P}_t(F_{\text{LAF}}) \right\|_2 + \mathcal{L}_{\text{CE}}\left(\phi(F_{\text{LAF}}), l_m\right) `$ 
+
+（3）Modality Contrastive Loss:$`\mathcal{L}_{\text{MC}} = \log\left(1 + \sum_{i\neq j} \exp\left(\frac{Y^r_i \cdot Y^t_j}{\tau} - \frac{Y^r_i \cdot Y^t_i}{\tau}\right)\right)`$
+
+（4）LPIPS/MS-SSIM Loss:$`\mathcal{L}_{\text{LPIPS-MS-SSIM}} = \lambda_1 \cdot \mathcal{D}_{\text{LPIPS}}\left(F_{\text{LAF}}, \frac{Y^r+Y^t}{2}\right) + \lambda_2 \cdot \left(1 - \text{MS-SSIM}\left(F_{\text{LAF}}, \frac{Y^r+Y^t}{2}\right)\right)`$
+
+### Core capabilities
+The integrated pre-trained features output by DarkAct-Net can directly support downstream tasks (such as action recognition, video retrieval) or multi-modal video semantic embedding; it only needs to add a single-layer regression head to the framework to quickly adapt to action recognition tasks, and has the characteristics of being lightweight and easy to expand.
 ### 1. Motion-Aware Attention (MAA)
 - Extracts **human-centric motion-salient regions** by computing temporal frame differences and enhancing local contrast.
 - Suppresses noisy low-light backgrounds and mitigates RGB-T pixel misalignment with a **spatial-tolerant attention map**.
