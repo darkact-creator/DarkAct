@@ -135,22 +135,22 @@ pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https
 ```
 
 ### 2. Dataset Preparation
-1. Download the DarkAct dataset from the [download link](#dataset-download).
+1. Download the DarkAct dataset from the [download link](https://pan.baidu.com/s/1GjmZdlJE5KcMqbTq2jiq8g?) password:43s8.
 2. Unzip the dataset and organize the directory as follows:
 ```
 DarkAct/
-├── data/
-│   ├── train/
-│   │   ├── rgb/
-│   │   ├── thermal/
-│   │   └── annotations.json
-│   └── test/
-│       ├── rgb/
-│       ├── thermal/
-│       └── annotations.json
-├── models/
-├── scripts/
-└── main.py
+├── annotations/
+├── videos/
+│   ├── RGB/
+│   │   ├── call/
+│   │   ├── climb_stairs/
+│   │   .....
+│   │   └── wave/
+│   ├── Thermal/
+│   │   ├── call/
+│   │   ├── climb_stairs/
+│   │   ......
+└─  │   └── wave/
 ```
 
 ### 3. Train DarkAct-Net
