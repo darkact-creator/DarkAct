@@ -44,8 +44,9 @@ DarkAct is designed with **three key dimensions of diversity** for realistic low
 Walking, calling, running, pouring, using smartphone, clapping, photographing, picking up object, jumping, pushing, taking off coat, putting on coat, drinking, searching, sitting, closing door, squatting, standing, turning, typing, climbing stairs, waving, holding umbrella, opening door, sleeping, lifting, crouching.
 
 ### Dataset Download
-The full DarkAct dataset (RGB-T video pairs, train/test splits, annotations) is available for research use at:
-[DarkAct Dataset Download](https://github.com/darkact-creator/DarkAct)
+The full DarkAct dataset (RGB-T video pairs, train/test splits, annotations) is available for research use at:<br>
+[Hugging-face Download](https://huggingface.co/datasets/Gooddayorig/DarkAct)<br>
+[Baidu Disk Download](https://pan.baidu.com/s/1GjmZdlJE5KcMqbTq2jiq8g?)  Password is 43s8.
 
 ## 🚀 DarkAct-Net Architecture
 DarkAct-Net is a Transformer-based RGB-Thermal fusion framework built on **MViTv2** backbone, optimized for low-light HAR with two core modules:
@@ -135,7 +136,7 @@ pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https
 ```
 
 ### 2. Dataset Preparation
-1. Download the DarkAct dataset from the [download link](https://pan.baidu.com/s/1GjmZdlJE5KcMqbTq2jiq8g?) password:43s8.
+1. Download the DarkAct dataset from the above.
 2. Unzip the dataset and organize the directory as follows:
 ```
 DarkAct/
